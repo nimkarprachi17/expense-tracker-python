@@ -1,4 +1,4 @@
-def add_expense(expenses):
+def add_new_expense(expense_list):
     amount = float(input("Enter amount: "))
     category = input("Enter category: ")
 
@@ -15,8 +15,9 @@ def show_expense(expenses):
             print("No expenses recorded.")
             return
 
-        for i, expense in enumerate(expenses, start=1):
-            print(f"{i}. {expense['category']} - ₹{expense['amount']}")
+        for index, item in enumerate(expense_list, start=1):
+            print(f"{index}. {expense['category']} - ₹{expense['amount']}")
+        print("Total number of expenses:", len(expense_list))
 #---------------------
 def total_expense(expenses):
     total = sum(expense["amount"] for expense in expenses)
@@ -47,7 +48,7 @@ def main():
     expenses = load_expenses()
 
     while True:
-        print("\nExpense Tracker")
+        print("\n------ Personal Expense Tracker ------")
         print("1. Add Expense")
         print("2. Show Expenses")
         print("3. Show Total")
@@ -56,7 +57,7 @@ def main():
         choice = input("Choose option: ")
 
         if choice == "1":
-            add_expense(expenses)
+            add_new_expense(expenses)
 
         elif choice == "2":
             show_expense(expenses)
