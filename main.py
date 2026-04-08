@@ -10,7 +10,7 @@ def add_expense(expenses):
     expenses.append(expense)
     print("Expense added successfully.")
 #--------------------
-def see_expense(expenses):
+def show_expense(expenses):
         if not expenses:
             print("No expenses recorded.")
             return
@@ -49,7 +49,7 @@ def main():
     while True:
         print("\nExpense Tracker")
         print("1. Add Expense")
-        print("2. View Expenses")
+        print("2. Show Expenses")
         print("3. Show Total")
         print("4. Exit")
 
@@ -59,7 +59,7 @@ def main():
             add_expense(expenses)
 
         elif choice == "2":
-            see_expense(expenses)
+            show_expense(expenses)
 
         elif choice == "3":
             total_expense(expenses)
